@@ -1,5 +1,3 @@
-
-
 close all, clear all
 [Aineq,B,S] = definition_constantes;
 
@@ -106,7 +104,7 @@ options=optimoptions('fmincon','Display','iter','Algorithm','sqp')
 [X,FVAL,EXITFLAG,OUTPUT]=fmincon(han_f1,U0,A,b,Aeq,beq,lb,ub)
 toc
 
-%Utilisation de l'algorithme SQP pour f2 
+%% Utilisation de l'algorithme SQP pour f2 
 
 d=5; U0 = zeros(d,1);
 A=[]; b=[]; Aeq=[]; beq=[]; lb=[0,0,0,0,0]; ub=[1,1,1,1,1];
@@ -224,7 +222,7 @@ tic
 options=optimoptions('fminunc','algorithm','quasi-newton','TolFun',tolerance)
 [X,FVAL,EXITFLAG,OUTPUT]= fminunc(han_J,Hinitial,options)
 toc
-%% 
+ 
 
 
 

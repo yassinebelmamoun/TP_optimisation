@@ -1,6 +1,7 @@
-%%Partie 2.3 : Methode gloutonne 
+%% Partie 2.3 : Methode gloutonne 
+clear all ;
 
-N=1000;
+N=10;
 ainf=0.02;
 asup=1;
 binf=0;
@@ -21,22 +22,17 @@ end
 plot(p_values,d_values,'bx');
 
 
-
-
-    p_values_pareto=[];
-    d_values_pareto=[];
+p_values_pareto=[];
+d_values_pareto=[];
 for i=1:N
     domine=0;
     for j = 1:N
-        if ((p_values(i) <= p_values(j)) )
-            domine=domine+1;
+        if ((p_values(i) < p_values(j)) && (d_values(i)<= d_values(j) ))
+            p_values_pareto=[p_values_pareto;p_values(i)];
         end
-    if domine == N-1
-        p_values_pareto=[p_values_pareto;p_values(i)];
-        d_values_pareto=[d_values_pareto;d_values(i)];
-    end
     end
 end    
+
 
 %%Partie 2.3 : Methode plus sophistiquée
 
